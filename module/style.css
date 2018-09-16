@@ -4,32 +4,68 @@ body {
 }
 h1{
     margin-bottom: 15px;
+    text-align: center;
 }
+*{
+    box-sizing: border-box;
+}
+
+
 
 div#container{
     background-color: #317bd1;
 }
 
 p{
-    width: 50px;
-    height: 50px;
+    width: 50%;
     border: 1px solid black;
-    margin-bottom: 15px;
+    float: left;
+    padding: 15px;   
+    text-align: center;
 }
 
 #p1{
-    background-color: #ac84ec;
-    position: relative;
-    top: 65px;
-    left: 65px;
+    background-color: #ecc784;
+    
 }
 
 #p2{
     background-color: #120fe6;
+    position: relative;
+    left: 5px;
 }
 
 #p3{
     background-color: #127777;
 }
 
+.row{
+    width:100%
+}
 
+/*************Large Devices such as Desktops*********/
+@media(min-width:992px){
+    .col-lg-1, .col-lg-2, .col-lg-3{
+        float: left;
+        border: 1px solid black;
+    }
+    .col-lg-1{
+        width: 8.33%
+    }
+    .col-lg-2{
+        width: 16.66%;
+    }
+    .col-lg-3{
+        width: 33%;
+    }
+    
+    #p1{
+        width: 80%;
+    }
+    #p2{
+        width: 80%;
+    }
+    #p3{
+        width: 80%;
+    }
+}
