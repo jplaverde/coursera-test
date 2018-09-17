@@ -2,42 +2,109 @@ body {
     background-color: #22966f;
     font-size: 130%;
 }
+title {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+}
 h1{
     margin-bottom: 15px;
     text-align: center;
+    font-family: 'Times New Roman', Times, serif;
 }
 *{
     box-sizing: border-box;
+    width: 100%;
 }
 
 
 
-div#container{
+/*div#container{
     background-color: #317bd1;
+}*/
+
+#box{
+    background-color: #6a097e;
 }
 
 p{
-    width: 50%;
+
+    width: 90%;
     border: 1px solid black;
     float: left;
-    padding: 15px;   
-    text-align: center;
+    padding: 15px;  
+    text-align: left;
+    height: 150px;
+    margin-right: auto;
+    margin-left: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #f0f8ff;
 }
 
 #p1{
     background-color: #ecc784;
+    border: 3px solid black;
+    position: relative;
+    left: 5px;
     
 }
 
 #p2{
     background-color: #120fe6;
+    border: 3px solid black;
     position: relative;
     left: 5px;
 }
 
 #p3{
     background-color: #127777;
+    border: 3px solid black;
+    position: relative;
+    left: 5px;
 }
+
+#chicken{
+    background-color: #09707e;
+    font-size: 15px; 
+    text-align: center;
+    border: 1px solid black;
+    width: 25%;
+    height: 10px;
+    float: left;
+    position: relative;
+    top: -183px;
+    left: 66%;
+    right: 100px;  
+}
+
+#seafood{
+    background-color: #6a097e;
+    font-size: 15px; 
+    text-align: center;
+    border: 1px solid black;
+    width: 25%;
+    height: 10px;
+    float: left;
+    position: relative;
+    top: -183px;
+    left: 66%;
+    right: 100px;  
+}
+
+#beef{
+    background-color:#ecc784;
+    font-size: 15px; 
+    text-align: center;
+    border: 1px solid black;
+    width: 25%;
+    height: 10px;
+    float: left;
+    position: relative;
+    top: -183px;
+    left: 66%;
+    right: 100px;  
+}
+
+
 
 .row{
     width:100%
@@ -47,7 +114,7 @@ p{
 @media(min-width:992px){
     .col-lg-1, .col-lg-2, .col-lg-3{
         float: left;
-        border: 1px solid black;
+        
     }
     .col-lg-1{
         width: 8.33%
@@ -58,14 +125,6 @@ p{
     .col-lg-3{
         width: 33%;
     }
-    
-    #p1{
-        width: 80%;
-    }
-    #p2{
-        width: 80%;
-    }
-    #p3{
-        width: 80%;
-    }
 }
+
+    
