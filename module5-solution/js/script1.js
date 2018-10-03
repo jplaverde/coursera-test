@@ -12,7 +12,7 @@ $(function () { // Same as document.addEventListener("DOMContentLoaded"...
 (function (global) {
 
 var dc = {};
-
+var aboutHtmlUrl = "snippets/about-snippet.html";
 var homeHtmlUrl = "snippets/home-snippet.html";
 var allCategoriesUrl =
   "https://davids-restaurant.herokuapp.com/categories.json";
@@ -22,7 +22,8 @@ var menuItemsUrl =
   "https://davids-restaurant.herokuapp.com/menu_items.json?category=";
 var menuItemsTitleHtml = "snippets/menu-items-title.html";
 var menuItemHtml = "snippets/menu-item.html";
-var aboutHtmlUrl = "snippets/about-snippet.html";
+
+
 /**
  * d. In your Javascript code, create a function that produces a random number from 1 to 5 (inclusively).
  * @returns {Number}
@@ -32,36 +33,6 @@ function generateRandomNumber() {
     var minimum = 1;
     return Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
 }
-
-dc.showRatings= function() {
-   
-    showLoading("#main-content");
-  $ajaxUtils.sendGetRequest(
-    aboutHtmlUrl,
-    buildAndShowAboutHTML, false);
-}
-
-
-// Builds HTML for the about page based on the data
-// from the server
-function buildAndShowAboutHTML (aboutHTML) {
-  // Load about page
- var rating = generateRandomNumber();//+"-star rating";
-   
-   for(var index=1;index<=5;index++) {
-       if(index<=rating) {
-       aboutHTML =  insertProperty(aboutHTML,"property"+index,"fa fa-star" );
-      }else {
-          aboutHTML =  insertProperty(aboutHTML,"property"+index,"fa fa-star-o" );
-      }
-   }
-
-  
- // var classes = aboutHTML.querySelector("#navHomeButton").className;
-   insertHtml("#main-content", aboutHTML+rating+"-star rating");
-}
-
-
 
 // Convenience function for inserting innerHTML for 'select'
 var insertHtml = function (selector, html) {
@@ -156,12 +127,10 @@ function buildAndShowHomeHTML (categories) {
       // it into the home html snippet.
       //
       // var homeHtmlToInsertIntoMainPage = ....
-       
       var homeHtmlToInsertIntoMainPage = insertProperty(homeHtml,
                    "randomCategoryShortName",
-                  "'"+ chosenCategoryShortName.short_name+"'");
-                  
-                  
+                   chosenCategoryShortName);
+
       // TODO: STEP 4: Insert the the produced HTML in STEP 3 into the main page
       // Use the existing insertHtml function for that purpose. Look through this code for an example
       // of how to do that.
@@ -178,7 +147,6 @@ function chooseRandomCategory (categories) {
   var randomArrayIndex = Math.floor(Math.random() * categories.length);
 
   // return category object with that randomArrayIndex
-   
   return categories[randomArrayIndex];
 }
 
@@ -261,6 +229,7 @@ function buildCategoriesViewHtml(categories,
 // Builds HTML for the single category page based on the data
 // from the server
 function buildAndShowMenuItemsHTML (categoryMenuItems) {
+    alert("categoryMenuItems:"+categoryMenuItems);
   // Load title snippet of menu items page
   $ajaxUtils.sendGetRequest(
     menuItemsTitleHtml,
@@ -289,7 +258,8 @@ function buildAndShowMenuItemsHTML (categoryMenuItems) {
 function buildMenuItemsViewHtml(categoryMenuItems,
                                 menuItemsTitleHtml,
                                 menuItemHtml) {
-
+ alert("menuItemsTitleHtml:"+menuItemsTitleHtml);
+ alert("menuItemHtml:"+menuItemHtml);
   menuItemsTitleHtml =
     insertProperty(menuItemsTitleHtml,
                    "name",
