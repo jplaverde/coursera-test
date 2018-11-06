@@ -1,0 +1,2 @@
+You cannot run this in your local computer by accessing index.html file as directives cannot access template file directly.
+To run it, deploy/upload  on webserver and access index.html to see the output
